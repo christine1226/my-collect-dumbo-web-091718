@@ -1,6 +1,10 @@
 collection = ['ruby', 'javascript', 'python', 'objective-c']
 def my_collect(array)
-my_collect(collection) do |lang|
-  lang.upcase
+  new_collect=[]
+  i = 0
+  while i < array.length
+  new_collect.push yield(array[i])
+  i+=1
+  end
+  new_collect
 end
-end 
